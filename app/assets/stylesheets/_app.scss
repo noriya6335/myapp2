@@ -1,0 +1,36 @@
+.header{
+  border-bottom: solid 1px rgb(175, 175, 175);
+  &__contents{
+    max-width: 80%;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 15px 0 0;
+  a{
+    text-decoration: none;
+  }
+    &__top {
+      font-family: fantasy;
+      font-size: 50px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      display: flex;
+      
+    }
+    .sub{
+      font-size: 20px;
+      text-align: center;
+
+    }
+    &__bottom{
+      display: flex;
+      position: absolute;
+      right: 130px;
+      top: 100px;
+      &__left{
+        margin-right: 10px;
+      }
+      &__right{
+        margin-right:10px;
+      }
+    }
+  }
+}

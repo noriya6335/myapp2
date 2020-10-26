@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Myapp2
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    %section.header
+      .header__contents
+        .header__contents__top
+          = link_to root_path do
+            = image_tag ('8462.png')
+            beer rebrew
+            .sub
+              〜ビールレビューサイト〜
+        .header__contents__bottom
+          .header__contents__bottom__left
+            新規登録
+          .header__contents__bottom__right
+            アイテム追加
+
+    = yield
+    %section.add
+      .add__item
+        = link_to "追加する", "#"
