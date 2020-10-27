@@ -16,9 +16,18 @@
             beer rebrew
             .sub
               〜ビールレビューサイト〜
+      -if user_signed_in?
         .header__contents__bottom
           .header__contents__bottom__left
-            新規登録
+            = link_to "Mypage", new_user_registration_path
+            = link_to "Log out", new_user_session_path
+          .header__contents__bottom__right
+            アイテム追加
+      -else
+        .header__contents__bottom
+          .header__contents__bottom__left
+            = link_to "Sign up", new_user_registration_path
+            = link_to "login", new_user_session_path
           .header__contents__bottom__right
             アイテム追加
 
