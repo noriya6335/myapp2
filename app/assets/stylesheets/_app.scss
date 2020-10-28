@@ -36,3 +36,29 @@
     }
   }
 }
+
+.add{
+  width: 180px;
+  text-align: center;
+  border-radius: 20%;
+  bottom: 32px;
+  height: 150px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  background-image: image-url("icon.png");
+  background-size: cover;
+  background-position: center;
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  &__title{
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 10px;
+    width: 50%;
+    margin: auto;
+    position: absolute;
+    bottom: 50px;
+    right: 65px;
+  }
+}
