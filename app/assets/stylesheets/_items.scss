@@ -1,9 +1,43 @@
 .main{
-  max-width: 80%;
-  height: 100vh;
+  max-width: 100%;
+  min-height: 70vh;
+  background-image: image-url("main2.jpg");
+  background-size: cover;
   &__contents{
-    &__review{
-
+    max-width: 1050px;
+    margin: 0 auto;
+    padding-top: 100px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    font-size: 30px;
+    line-height: 1.2;
+    text-align: center;
+    &__btn{
+      font-size: 20px;
+      margin-top: 80px;
+      justify-content: center;
+      display: flex;
+      &--join{
+        background-color: rgb(241, 186, 82);
+        border-radius: 50px;
+        max-width: 300px;
+        max-height: 50px;
+        padding: 15px;
+        text-align: center;
+        margin-right: 30px;
+        color: white;
+      }
+      &--show{
+        background-color:rgb(241, 186, 82);
+        border-radius: 50px;
+        max-height: 50px;
+        max-width: 300px;
+        padding: 15px;
+        text-align: center;
+        line-height: 50px;
+        color: white;
+      }
     }
+
   }
 }
+
