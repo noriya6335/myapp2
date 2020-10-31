@@ -1,0 +1,6 @@
+.item__show
+  .item__show__main
+    = @item.name
+      - @item.item_images.each do |image|
+      = image_tag "#{image.image}"
+    = @item.description

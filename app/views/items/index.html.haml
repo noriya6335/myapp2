@@ -18,19 +18,23 @@
       
       .main__contents__btn--show
         レビューを見る
-    -# .main__contents__review
-    -#   レビュー
-    -#   .item
-    -#     Beer
-    -#     .item__contents
-    -#       .item__image
-    -#         写真
-    -#       .item__name
-    -#         アイテム名
 
-    -#   .shop
-    -#     Shop
-    -#     .shop__image
-    -#       店舗写真
-    -#     .shop__name
-    -#       店舗名
+  .main__item
+    .main__item__post
+    #item-new
+      %p 新規投稿アイテム
+      - @newitems.each do |item|
+        .main__item__post__new
+          = item.name
+          = item.maker
+          - item.item_images.each do |image|
+            = image_tag "#{image.image}", class: "main__item__post__new__image"
+
+    .main__item__comment
+      最新レビューアイテム
+      - @newitems.each do |item|
+        .main__item__comment__new
+          = item.name
+          = item.maker
+          - item.item_images.each do |image|
+            = image_tag "#{image.image}", class: "main__item__comment__new__image"

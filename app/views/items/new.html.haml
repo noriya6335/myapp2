@@ -1,13 +1,51 @@
 .container
   .container__main
     = form_for @item do |f|
+      %ul
+        %li  
+          .topic 名前
+        %li
+          .necessarily 必須
+      .container__main-content__name
+        = f.text_field :name , placeholder: " 名前"
+        %ul
+          %li  
+            .topic メーカー
+          %li
+            .necessarily 必須
+      .container__main-content__maker
+        = f.text_field :maker , placeholder: " メーカー名"
+
+        %ul
+          %li  
+            .topic 価格
+          %li
+            .necessarily 必須
+      .container__main-content__maker
+        = f.number_field :price , placeholder: " 価格"
+
       .container__main-content__item-image
         %ul
           %li  
-            .topic 出品画像
+            .topic 画像
           %li
             .necessarily 必須
-        .description 最大10枚までアップロードできます
         #image-box.image-form
           = f.fields_for :item_images do |i|
             = i.file_field :image
+        %ul
+          %li  
+            .topic 説明
+          %li
+            .necessarily 必須
+      .container__main-content__description
+        = f.text_area :description , placeholder: " 商品の説明"
+
+        %ul
+          %li  
+            .topic 種類
+          %li
+            .necessarily 必須
+      .container__main-content__description
+        = f.collection_select(:category_id, Category.all, :id, :name,{include_blank: "選択してください"}, class: "condition-form")
+        =f.submit '出品する'
