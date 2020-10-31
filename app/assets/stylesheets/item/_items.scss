@@ -21,7 +21,7 @@
       margin-top: 80px;
       justify-content: center;
       display: flex;
-      margin-bottom: 100px;
+      margin-bottom: 80px;
       &--join{
         background-color: rgb(241, 186, 82);
         border-radius: 50px;
@@ -51,10 +51,11 @@
     display: flex;
     &__post{
       display: flex;
+      margin-top: 10px;
       &__new{
         background-color: white;
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
         border-radius: 50px;
         box-shadow: 0 0 10px rgba(0,0,0,0.4);
         text-align: center;
@@ -75,10 +76,11 @@
     }
     &__comment{
       display: flex;
+      margin-top: 10px;
       &__new{
         background-color: white;
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
         border-radius: 50px;
         padding: 3px;
         box-shadow: 0 0 10px rgba(0,0,0,0.4);
@@ -94,3 +96,10 @@
   }
 }
 
+.new-post-title{
+  margin-left: 30px;
+}
+
+.new-comment-title{
+  margin-left: 50px;
+}

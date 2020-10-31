@@ -20,25 +20,26 @@
         レビューを見る
 
   .main__item
-    .main__item__post
-      %p 新規追加アイテム
-      - @newitems.each do |item|
-        .main__item__post__new
-          = link_to item_path(item.id) do
-            = image_tag item.item_images[0].image.url , class: "main__item__post__new__image"
-            .main__item__post__new__name
-              = item.name
-            .main__item__post__new__maker
-              = item.maker
+    .new-post-title
+      新規追加アイテム
+      .main__item__post    
+        - @newitems.each do |item|
+          .main__item__post__new
+            = link_to item_path(item.id) do
+              = image_tag item.item_images[0].image.url , class: "main__item__post__new__image"
+              .main__item__post__new__name
+                = item.name
+              .main__item__post__new__maker
+                = item.maker
 
-
-    .main__item__comment
+    .new-comment-title
       最新レビュー追加
-      - @newitems.each do |item|
-        .main__item__comment__new
-          = link_to item_path(item.id) do
-            = image_tag item.item_images[0].image.url, class: "main__item__comment__new__image"
-            .main__item__comment__new__name
-              = item.name
-            .main__item__comment__new__maker
-              = item.maker
+      .main__item__comment
+        - @newitems.each do |item|
+          .main__item__comment__new
+            = link_to item_path(item.id) do
+              = image_tag item.item_images[0].image.url, class: "main__item__comment__new__image"
+              .main__item__comment__new__name
+                = item.name
+              .main__item__comment__new__maker
+                = item.maker
