@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @newitems = Item.includes(:item_images).order("created_at DESC").limit(5)
+    @newitems = Item.includes(:item_images).order("created_at DESC").limit(2)
   end
 
   def new
@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to root_path
+      redirect_to root_path, notice: '商品を登録しました'
     else
       @item.item_images.new
       @item.valid?

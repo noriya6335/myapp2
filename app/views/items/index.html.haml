@@ -21,20 +21,24 @@
 
   .main__item
     .main__item__post
-    #item-new
-      %p 新規投稿アイテム
+      %p 新規追加アイテム
       - @newitems.each do |item|
         .main__item__post__new
-          = item.name
-          = item.maker
-          - item.item_images.each do |image|
-            = image_tag "#{image.image}", class: "main__item__post__new__image"
+          = link_to item_path(item.id) do
+            = image_tag item.item_images[0].image.url , class: "main__item__post__new__image"
+            .main__item__post__new__name
+              = item.name
+            .main__item__post__new__maker
+              = item.maker
+
 
     .main__item__comment
-      最新レビューアイテム
+      最新レビュー追加
       - @newitems.each do |item|
         .main__item__comment__new
-          = item.name
-          = item.maker
-          - item.item_images.each do |image|
-            = image_tag "#{image.image}", class: "main__item__comment__new__image"
+          = link_to item_path(item.id) do
+            = image_tag item.item_images[0].image.url, class: "main__item__comment__new__image"
+            .main__item__comment__new__name
+              = item.name
+            .main__item__comment__new__maker
+              = item.maker
