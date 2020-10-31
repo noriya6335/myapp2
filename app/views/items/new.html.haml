@@ -1,0 +1,13 @@
+.container
+  .container__main
+    = form_for @item do |f|
+      .container__main-content__item-image
+        %ul
+          %li  
+            .topic 出品画像
+          %li
+            .necessarily 必須
+        .description 最大10枚までアップロードできます
+        #image-box.image-form
+          = f.fields_for :item_images do |i|
+            = i.file_field :image

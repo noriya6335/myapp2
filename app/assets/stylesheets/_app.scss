@@ -2,14 +2,19 @@
   border-bottom: solid 1px rgb(175, 175, 175);
   min-width: 50%;
   max-height: 30vh;
+  a{
+    text-decoration: none;
+    color: black;
+    &:hover{
+      border-bottom: solid 1px orange;
+    }
+  }
   &__contents{
     min-height: 82px;
     min-width: 50%;
     margin: 0 auto;
     padding: 15px ;
-  a{
-    text-decoration: none;
-  }
+
     &__top {
       font-family: fantasy;
       font-size: 50px;

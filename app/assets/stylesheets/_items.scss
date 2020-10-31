@@ -5,6 +5,9 @@
   background-size: cover;
   align-items: center;
   background-position: top center;
+  a{
+    text-decoration: none;
+  }
   &__contents{
     max-width: 1050px;
     margin: 0 auto;
@@ -21,7 +24,7 @@
       &--join{
         background-color: rgb(241, 186, 82);
         border-radius: 50px;
-        max-width: 300px;
+        max-width: 360px;
         max-height: 50px;
         padding: 15px;
         text-align: center;
@@ -33,7 +36,7 @@
         border-radius: 50px;
         max-height: 50px;
         max-width: 300px;
-        padding: 15px;
+        padding: 15px 20px;
         text-align: center;
         line-height: 50px;
         color: white;

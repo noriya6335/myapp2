@@ -5,9 +5,17 @@
 
     .main__contents__btn
       .main__contents__btn--join
-        投稿する
-        %br/
-        （ユーザー登録が必要です）
+        -if !user_signed_in?
+          = link_to new_user_session_path do
+            投稿する
+            %br/
+            （ユーザー登録・ログインが必要です）
+        -else
+          = link_to new_user_session_path do
+            投稿する
+            %br/
+            （ユーザー登録が必要です）
+      
       .main__contents__btn--show
         レビューを見る
     -# .main__contents__review
