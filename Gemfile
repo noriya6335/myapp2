@@ -74,3 +74,5 @@ gem 'ancestry'
 gem 'devise'
 gem "font-awesome-sass"
 gem "aws-sdk-s3", require: false
+gem 'dotenv-rails'
+gem 'fog-aws'
