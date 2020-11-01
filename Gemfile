@@ -73,4 +73,4 @@ gem 'jquery-rails'
 gem 'ancestry'
 gem 'devise'
 gem "font-awesome-sass"
-gem 'aws-sdk', '~> 2'
+gem "aws-sdk-s3", require: false
