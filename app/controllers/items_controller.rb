@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    
+    @category = @item.category
   end
 
   def create

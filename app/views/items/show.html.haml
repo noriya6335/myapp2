@@ -4,3 +4,5 @@
       - @item.item_images.each do |image|
       = image_tag "#{image.image}"
     = @item.description
+    = @item.maker
+    = @category.name
