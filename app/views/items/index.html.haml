@@ -5,14 +5,10 @@
 
     .main__contents__btn
       .main__contents__btn--join
-        -if !user_signed_in?
-          = link_to new_user_session_path do
-            レビューを投稿する、見る。
-            .main__contents__btn--join__check
-              （投稿にはユーザー登録・ログインが必要です）
-        -else
-          = link_to category_index_path do
-            レビューを投稿する、見る。
+        = link_to category_index_path do
+          レビューを投稿する、見る。
+          .main__contents__btn--join__check
+            （投稿にはユーザー登録・ログインが必要です）
             %br/
       
   .main__item
