@@ -1,0 +1,31 @@
+// category index
+.item_list{
+  display: flex;
+  &__title{
+    margin: 10px;
+    &__name{
+      text-align: center;
+    }
+  }
+}
+a{
+  text-decoration: none;
+  color: black;
+  text-shadow: 0 0 3px rgba(167, 149, 149, 0.616);
+}
+
+// category show
+
+.category__title{
+
+}
+
+.category__list{
+  display: flex;
+  &__item{
+    margin: 10px;
+    &__name{
+      text-align: center;
+    }
+  }
+}

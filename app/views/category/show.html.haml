@@ -1,9 +1,13 @@
 .category__title
   = "#{@category.name}のビール一覧"
 = @category.id
-.category__item
+.category__list
   - @item.each do |item|
-    = item.name
-    = image_tag item.item_images[0].image.url , class: "main__item__post__new__image"
-    = item.maker
+    .category__list__item
+      = link_to item_path(item) do
+        = image_tag item.item_images[0].image.url , class: "main__item__post__new__image"
+        .category__list__item__name
+          = item.name
+          = item.maker
+
 
