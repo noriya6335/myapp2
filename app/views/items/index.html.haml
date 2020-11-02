@@ -7,19 +7,14 @@
       .main__contents__btn--join
         -if !user_signed_in?
           = link_to new_user_session_path do
-            投稿する
-            %br/
-            （ユーザー登録・ログインが必要です）
+            レビューを投稿する、見る。
+            .main__contents__btn--join__check
+              （投稿にはユーザー登録・ログインが必要です）
         -else
-          = link_to new_user_session_path do
-            投稿する
+          = link_to category_index_path do
+            レビューを投稿する、見る。
             %br/
-            （ユーザー登録が必要です）
       
-      .main__contents__btn--show
-        = link_to category_index_path do
-          レビューを見る
-
   .main__item
     .new-post-title
       新規追加アイテム

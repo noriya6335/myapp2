@@ -25,24 +25,23 @@
       &--join{
         background-color: rgb(241, 186, 82);
         border-radius: 50px;
-        max-width: 360px;
-        max-height: 50px;
+        width: 380px;
+        height: 50px;
+        line-height: 50px;
         padding: 15px;
         text-align: center;
         margin-right: 30px;
-        color: white;
         box-shadow: 0 0 10px rgba(0,0,0,0.4);
-      }
-      &--show{
-        background-color:rgb(241, 186, 82);
-        border-radius: 50px;
-        max-height: 50px;
-        max-width: 300px;
-        padding: 15px 20px;
-        text-align: center;
-        line-height: 50px;
-        color: white;
-        box-shadow: 0 0 10px rgba(0,0,0,0.4);
+        &__check{
+          font-size: 14px;
+          text-align: center;
+          color: white;
+          text-shadow: 0 0 10px rgba(0,0,0,0.4);
+        }
+        a{
+          color: white;
+          text-shadow: 0 0 10px rgba(0,0,0,0.4);
+        }
       }
     }
   }
