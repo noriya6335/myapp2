@@ -25,6 +25,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  def review
+    @items = Item.includes(:item_images).order("created_at DESC")
+  end
+  
   private
   def item_params
     params.require(:item).permit(:name, :description, :maker ,:price, :category_id,  item_images_attributes: [:image])
