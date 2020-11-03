@@ -1,8 +1,17 @@
 .item__show
   .item__show__main
-    = @item.name
+    .item__show__main__picture
       - @item.item_images.each do |image|
-      = image_tag "#{image.image}"
-    = @item.description
-    = @item.maker
-    = @category.name
+        = image_tag "#{image.image}"
+    .item__show__main__data
+      .item__show__main__data--name
+        .item_data__name
+          = @item.name
+        .item_data__price
+          = "#{@item.price} 円"
+      .item__show__main__data--maker
+        = @item.maker
+      .item__show__main__data--category
+        = @category.name
+      .item__show__main__data--description
+        = @item.description

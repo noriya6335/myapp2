@@ -1,8 +1,43 @@
 .item__show{
   &__main{
     font-size: 18px;
+    display: flex;
+    &__picture{
+      margin: 20px;
+      border-radius: 10px;
+      border: 1px solid lightgray;
+      overflow: hidden;
+      width: 600px;
+      height: 600px;
+      background-color: white;
+      box-shadow: 0 0 5px rgba(0,0,0,0.4);
+    }
+    &__data{
+      &--name{
+        display: flex;
+      }
+      &--maker{
+        
+      }
+      &--description{
+
+      }
+      &--category{
+
+      }
+    }
   }
   background-color: lightsalmon;
   width: 100%;
   min-height: 100vh;
+}
+
+.item_data{
+  &__name{
+    font-size: 60px;
+    margin-right: 20px;
+  }
+  &__price{
+    font-size: 14px;
+  }
 }
