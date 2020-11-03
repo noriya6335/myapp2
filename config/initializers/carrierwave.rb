@@ -3,7 +3,7 @@ require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
 CarrierWave.configure do |config|
-  config.storage :fog
+  config.storage = :fog
   config.fog_provider = 'fog/aws'
   config.fog_directory  = 'beer-rebrew'
   config.fog_credentials = {
@@ -13,5 +13,5 @@ CarrierWave.configure do |config|
     region: ENV['AWS_DEFAULT_REGION'],
     path_style: true
   }
-
+  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/beer-rebrew'
 end
