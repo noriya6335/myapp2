@@ -47,5 +47,5 @@
           %li
             .necessarily 必須
       .container__main-content__description
-        = f.collection_select(:category_id, Category.all, :id, :name,{include_blank: "選択してください"}, class: "condition-form")
+        = f.collection_select(:category_id, Category.all, :id, :name,{include_blank: "選択してください"})
         =f.submit '出品する'

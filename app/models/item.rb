@@ -1,6 +1,5 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :user
   has_many :item_images
   has_many :comments
   belongs_to_active_hash :category
