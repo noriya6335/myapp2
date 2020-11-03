@@ -30,9 +30,10 @@
           .header__contents__bottom__right
 
     = yield
-    = link_to category_index_path do
-      %section.add
-        .add__title
-          レビューを投稿する
+    - if controller_name != "registrations" && controller_name != "sessions" && controller_name != "passwords"
+      = link_to category_index_path do
+        %section.add
+          .add__title
+            レビューを投稿する
        
 
