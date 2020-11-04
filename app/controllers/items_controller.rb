@@ -28,9 +28,13 @@ class ItemsController < ApplicationController
     end
   end
 
-  def review
-    @items = Item.includes(:item_images).order("created_at DESC")
+
+  def destroy
+    @item.destroy
+    flash[:notice] = '削除しました'
+    redirect_to root_path
   end
+
   
   private
   def item_params

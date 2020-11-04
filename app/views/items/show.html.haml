@@ -1,8 +1,5 @@
 .item__show
   .item__show__main
-    .item__show__main__picture
-      - @item.item_images.each do |image|
-        = image_tag "#{image.image}"
     .item__show__main__data
       .item__show__main__data--name
         .item_data__name
@@ -30,6 +27,17 @@
                   = comment.text
                 .review__list__content--time
                   = comment.created_at.strftime("%Y-%m-%d %H:%M")
+    .item__show__main__picture
+      .item__show__main__picture--box    
+        - @item.item_images.each do |image|
+          = image_tag "#{image.image}"
+      .item_edit
+        .item_edit__update
+          EDIT
+        .item_edit__delete
+          = link_to item_path(@item.id), method: :delete, data: {confirm: "削除しますか？"} do
+            DELETE
+          
   .review
     .review__content
       = "#{@item.name} のレビュー"

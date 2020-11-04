@@ -30,7 +30,7 @@
           .header__contents__bottom__right
 
     = yield
-    - if controller_name != "registrations" && controller_name != "sessions" && controller_name != "passwords"
+    - if controller_name != "registrations" && controller_name != "sessions" && controller_name != "passwords"&& action_name != "show"
       = link_to category_index_path do
         %section.add
           .add__title

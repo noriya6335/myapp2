@@ -1,6 +1,12 @@
 // category index
+h1{
+  padding: 10px;
+}
+
 .item_list{
   display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
   &__title{
     margin: 10px;
     &__name{
@@ -14,14 +20,24 @@ a{
   text-shadow: 0 0 3px rgba(167, 149, 149, 0.616);
 }
 
+.categories_list{
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  &__item{
+    width: 320px;
+    margin: 10px 0px;
+  }
+}
 // category show
 
 .category__title{
-
+  
 }
 
 .category__list{
   display: flex;
+  padding: 10px;
   &__item{
     margin: 10px;
     &__name{

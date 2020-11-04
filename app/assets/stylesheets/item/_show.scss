@@ -8,25 +8,31 @@
     height: 80vh;
     width: 100%;
     &__picture{
-      margin: 20px;
+      width: 45%;
+      &--box{
+      margin: 30px;
       border-radius: 10px;
       border: 1px solid lightgray;
       overflow: hidden;
-      width: 45%;
       height: 450px;
-      background-color: white;
       box-shadow: 0 0 5px rgba(0,0,0,0.4);
+      padding: 1px;
+      background-color: white;
+      }
       img{
         object-fit: cover;
         width: 100%;
         height: 100%;
       }
     }
+    
     &__data{
       width: 60%;
+      padding: 20px;
       &--name{
         display: flex;
         margin-bottom: 10px;
+        
       }
       &--maker{
         margin-bottom: 10px;
@@ -77,5 +83,24 @@
   padding: 10px;
   &__content{
     margin-right: 100px;
+  }
+}
+
+.item_edit{
+  display: flex;
+  width: 45%;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 5px;
+  background-color: lightblue;
+  &__update{
+    margin-right: 5px;
+    background-color: whitesmoke;
+    padding: 5px;
+  }
+  &__delete{
+    background-color: whitesmoke;
+    padding: 5px;
+
   }
 }
