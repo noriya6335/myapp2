@@ -15,12 +15,42 @@
         = @category.name
       .item__show__main__data--description
         = @item.description
+      .item_review__total
+        .item_review__list
+          -@item.comments.each do |comment|
+            .review__list{id: "comment-#{comment.id}"}
+              .review__list__user
+                .review__list__user--name
+                  = link_to comment.user.nickname ,"/users/#{comment.user_id}"
+                .review__list__user--delete
+                  = link_to item_comment_path(comment.item_id, comment.id) ,method: :delete, remote: true, data: { confirm: 'コメントを削除しますか？' }  do
+                    = icon("fa","trash-alt")
+              .review__list__content
+                .review__list__content--body
+                  = comment.text
+                .review__list__content--time
+                  = comment.created_at.strftime("%Y-%m-%d %H:%M")
   .review
     .review__content
-      このビールに対する評価を星１〜５でしてください
+      = "#{@item.name} のレビュー"
       .review__star
+        このビールに対する評価を星１〜５でしてください
         星１〜５
-    .comment
+
+    .comment__area
       コメントがあればこちらに
-      .comment__box
-        %textarea
+      -if current_user
+        = form_with model: [@item, @comment], local: true , id: "new_comment" do |form|
+          .comment__box
+            = form.text_area :text, rows: "2", class: "textbox"
+            .comment__submit
+            %button{type: "submit", class:'comment__submit__btn'} 
+              %i.fas.fa-comment
+                コメントする
+      -else
+        .comment__caution__login
+          ※※※ コメントの投稿には
+          =link_to "新規登録" ,new_user_registration_path 
+          または
+          =link_to "ログイン", new_user_session_path 
+          が必要です ※※※

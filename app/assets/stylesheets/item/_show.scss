@@ -1,7 +1,11 @@
 .item__show{
+  background-color: lightsalmon;
+  width: 100%;
+  min-height: 100vh;
   &__main{
     font-size: 18px;
     display: flex;
+    height: 80vh;
     &__picture{
       margin: 20px;
       border-radius: 10px;
@@ -23,7 +27,7 @@
       &--description{
         background-color: white;
         width: 700px;
-        height: 30vh;
+        height: 25vh;
         padding: 10px;
         overflow: scroll;
       }
@@ -32,9 +36,7 @@
       }
     }
   }
-  background-color: lightsalmon;
-  width: 100%;
-  min-height: 100vh;
+
 }
 
 .item_data{
@@ -47,15 +49,25 @@
     margin-top: 40px;
   }
 }
+.item_review{
+  &__total{
 
+  }
+
+  &__list{
+    overflow: scroll;
+    background-color: chartreuse;
+    max-height: 25vh;
+    padding: 10px;
+    margin-top: 10px;
+  }
+}
 .review{
   display: flex;
-  justify-content: space-around;
+  height: 20vh;
+  background-color: cadetblue;
+  padding: 10px;
   &__content{
     margin-right: 100px;
   }
-}
-
-.comment{
-
 }

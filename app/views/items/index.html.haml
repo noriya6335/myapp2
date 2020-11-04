@@ -27,7 +27,7 @@
     .new-comment-title
       最新レビュー追加
       .main__item__comment
-        - @newitems.each do |item|
+        - @newcommentitems.each do |item|
           .main__item__comment__new
             = link_to item_path(item.id) do
               = image_tag item.item_images[0].image.url, class: "main__item__comment__new__image"

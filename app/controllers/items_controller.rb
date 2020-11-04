@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
 
   def index
     @newitems = Item.includes(:item_images).order("created_at DESC").limit(2)
+    @newcommentitems = Item.includes(:comments).order("comments.created_at DESC").limit(2)
   end
 
   def new
@@ -12,6 +13,8 @@ class ItemsController < ApplicationController
 
   def show
     @category = @item.category
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)
   end
 
   def create
