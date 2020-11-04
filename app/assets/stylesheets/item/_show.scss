@@ -1,7 +1,7 @@
 .item__show{
   background-color: lightsalmon;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   &__main{
     font-size: 18px;
     display: flex;
@@ -13,7 +13,7 @@
       border: 1px solid lightgray;
       overflow: hidden;
       width: 45%;
-      height: 80%;
+      height: 450px;
       background-color: white;
       box-shadow: 0 0 5px rgba(0,0,0,0.4);
       img{
