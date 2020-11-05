@@ -1,0 +1,67 @@
+// new registrations
+h2{
+  text-align: center;
+}
+
+.user_form{
+  max-height: 100vh;
+  width: 100%;
+  margin: auto;
+  padding: 20px 0px;
+  margin: 10px;
+  .field{
+    background-color: rgb(255, 205, 113);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    flex-direction: column;
+    padding: 20px 10px;
+
+    input{
+      padding: 10px;
+      width: 25%;
+      height: 20px;
+      &:hover{
+        background-color: orange;
+      }
+    }
+    textarea{
+      width: 60%;
+      height: 100px;
+      padding: 15px;
+    }
+    &__check{
+      text-align: center;
+      &__box{
+
+      }
+      &__label{
+        
+      }
+    }
+  }
+  .actions{
+  text-align: center;
+  margin: 20px 10px;
+    input{
+      width: 20%;
+      padding: 10px;
+      font-size: 18px;
+      background-color: rgb(250, 197, 100);
+      color: white;
+      &:hover{
+        background-color: white;
+        color: orange;
+        transition: 200ms;
+        border-radius: 20px;
+      }
+    }
+  }
+
+  &__att{
+    text-align: center;
+  }
+}
+

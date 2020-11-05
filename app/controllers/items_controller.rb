@@ -2,8 +2,8 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @newitems = Item.includes(:item_images).order("created_at DESC").limit(2)
-    @newcommentitems = Item.includes(:comments).order("comments.created_at DESC").limit(2)
+    @newitems = Item.includes(:item_images).order("created_at DESC").limit(10)
+    @newcommentitems = Item.includes(:comments).order("comments.created_at DESC").limit(10)
   end
 
   def new

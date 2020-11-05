@@ -1,51 +1,51 @@
 .container
+  %h2 アイテムの追加
   .container__main
     = form_for @item do |f|
-      %ul
-        %li  
-          .topic 名前
-        %li
-          .necessarily 必須
-      .container__main-content__name
-        = f.text_field :name , placeholder: " 名前"
-        %ul
-          %li  
-            .topic メーカー
-          %li
-            .necessarily 必須
-      .container__main-content__maker
-        = f.text_field :maker , placeholder: " メーカー名"
-
-        %ul
-          %li  
-            .topic 価格
-          %li
-            .necessarily 必須
-      .container__main-content__maker
-        = f.number_field :price , placeholder: " 価格"
-
-      .container__main-content__item-image
-        %ul
-          %li  
-            .topic 画像
-          %li
-            .necessarily 必須
-        #image-box.image-form
-          = f.fields_for :item_images do |i|
-            = i.file_field :image
-        %ul
-          %li  
-            .topic 説明
-          %li
-            .necessarily 必須
-      .container__main-content__description
-        = f.text_area :description , placeholder: " 商品の説明"
-
-        %ul
-          %li  
-            .topic 種類
-          %li
-            .necessarily 必須
-      .container__main-content__description
-        = f.collection_select(:category_id, Category.all, :id, :name,{include_blank: "選択してください"})
-        =f.submit '出品する'
+      .user_form
+        .field
+          %ul
+            %li  
+              .topic 名前
+            %li
+              .necessarily 必須
+          = f.text_field :name , placeholder: " 名前"
+        .field       
+          %ul
+            %li  
+              .topic メーカー
+            %li
+              .necessarily 必須
+          = f.text_field :maker , placeholder: " メーカー名"
+        .field
+          %ul
+            %li  
+              .topic 価格
+            %li
+              .necessarily 必須
+          = f.number_field :price , placeholder: " 価格"
+        .field
+          %ul
+            %li  
+              .topic 画像
+            %li
+              .necessarily 必須
+          #image-box.image-form
+            = f.fields_for :item_images do |i|
+              = i.file_field :image
+        .field
+          %ul
+            %li  
+              .topic 説明
+            %li
+              .necessarily 必須
+          = f.text_area :description , placeholder: " 商品の説明"
+        .field
+          %ul
+            %li  
+              .topic 種類
+            %li
+              .necessarily 必須
+          = f.collection_select(:category_id, Category.all, :id, :name,{include_blank: "選択してください"},{class:"category__form"})
+        .actions
+          =f.submit '出品する'

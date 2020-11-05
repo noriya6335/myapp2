@@ -16,8 +16,8 @@
       新規追加アイテム
       .main__item__post    
         - @newitems.each do |item|
-          .main__item__post__new
-            = link_to item_path(item.id) do
+          = link_to item_path(item.id) do
+            .main__item__post__new
               = image_tag item.item_images[0].image.url , class: "main__item__post__new__image"
               .main__item__post__new__name
                 = item.name
@@ -28,8 +28,8 @@
       最新レビュー追加
       .main__item__comment
         - @newcommentitems.each do |item|
-          .main__item__comment__new
-            = link_to item_path(item.id) do
+          = link_to item_path(item.id) do
+            .main__item__comment__new
               = image_tag item.item_images[0].image.url, class: "main__item__comment__new__image"
               .main__item__comment__new__name
                 = item.name

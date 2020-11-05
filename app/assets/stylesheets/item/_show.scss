@@ -43,6 +43,7 @@
         height: 20vh;
         padding: 10px;
         overflow: scroll;
+        box-shadow: 0 0 5px rgba(0,0,0,0.4);
       }
       &--category{
         margin-bottom: 10px;
@@ -74,6 +75,7 @@
     padding: 10px;
     margin-top: 10px;
     width: 90%;
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
   }
 }
 .review{
@@ -93,6 +95,7 @@
   margin: 0 auto;
   padding: 5px;
   background-color: lightblue;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
   &__update{
     margin-right: 5px;
     background-color: whitesmoke;
