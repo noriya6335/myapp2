@@ -14,5 +14,8 @@
 //= require jquery_ujs
 //= require activestorage
 //= require turbolinks
-//= require jquery_raty.js
+//= require jquery_raty
 //= require_tree .
+
+
+

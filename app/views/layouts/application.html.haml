@@ -28,7 +28,7 @@
             = link_to "Signup", new_user_registration_path
             = link_to "login", new_user_session_path
           .header__contents__bottom__right
-
+          
     = yield
     - if controller_name != "registrations" && controller_name != "sessions" && controller_name != "passwords"&& action_name != "show"
       = link_to category_index_path do

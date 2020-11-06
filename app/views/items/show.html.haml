@@ -2,10 +2,13 @@
   .item__show__main
     .item__show__main__data
       .item__show__main__data--name
-        .item_data__name
-          = @item.name
-        .item_data__price
-          = "#{@item.price} 円"
+        .item_data
+          .item_data__name
+            = @item.name
+          .item_data__price
+            = "#{@item.price} 円"
+        .review_count
+          = "レビュー数　#{@item.comments.length}件"
       .item__show__main__data--maker
         = @item.maker
       .item__show__main__data--category
@@ -43,20 +46,21 @@
                   = link_to item_comment_path(comment.item_id, comment.id) ,method: :delete, remote: true, data: { confirm: 'コメントを削除しますか？' }  do
                     = icon("fa","trash-alt")
                 .rate
+                  = image_tag ("star-on.png")
                   = "#{comment.rate}点"
                 .rate-star{id: "star-rate-#{comment.id}"}
-                  :erb
-                    <script>
-                      $("#star-rate-<%= comment.id %>").raty({
-                        size: 36,
-                        starOff: "/assets/star-off.png",
-                        starOn: "/assets/star-on.png",
-                        starHalf: "/assets/star-half.png",
-                        half: true,
-                        readOnly: true,
-                        score: <%= comment.rate %>,
-                      });
-                    </script>  
+                  -# :erb
+                  -#   <script>
+                  -#     $("#star-rate-<%= comment.id %>").raty({
+                  -#       size: 36,
+                  -#       starOff: "/assets/star-off.png",
+                  -#       starOn: "/assets/star-on.png",
+                  -#       starHalf: "/assets/star-half.png",
+                  -#       half: true,
+                  -#       readOnly: true,
+                  -#       score: <%= comment.rate %>,
+                  -#     });
+                  -#   </script>  
               .item_review__list__text
                 .item_review__list__text--body
                   = comment.text

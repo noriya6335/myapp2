@@ -30,9 +30,22 @@
       width: 60%;
       padding: 20px;
       &--name{
-        display: flex;
         margin-bottom: 10px;
-        
+        .item_data{
+          display: flex;
+          &__name{
+            font-size: 60px;
+            margin-right: 20px;
+          }
+          &__price{
+            font-size: 20px;
+            margin-top: 40px;
+          }
+        }
+        .review_count{
+          float: right;
+          margin-right: 70px;
+        }
       }
       &--maker{
         margin-bottom: 10px;
@@ -65,16 +78,6 @@
 
 }
 
-.item_data{
-  &__name{
-    font-size: 60px;
-    margin-right: 20px;
-  }
-  &__price{
-    font-size: 20px;
-    margin-top: 40px;
-  }
-}
 
 .review{
   display: flex;
