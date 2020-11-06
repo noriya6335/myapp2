@@ -24,8 +24,9 @@ a{
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   &__item{
-    width: 320px;
+    width: 360px;
     margin: 10px 0px;
   }
 }

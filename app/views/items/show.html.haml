@@ -8,11 +8,12 @@
           .item_data__price
             = "#{@item.price} 円"
         .review_count
-          = "レビュー数　#{@item.comments.length}件"
+          = "レビュー数  #{@item.comments.length}件"
       .item__show__main__data--maker
         = @item.maker
       .item__show__main__data--category
-        = @category.name
+        = link_to category_path(@category.id) do
+          = @category.name
         .rate-star{id: "star-rate-#{@item.id}"}
           -if @average_review == 0
             .rate-star__noreview
