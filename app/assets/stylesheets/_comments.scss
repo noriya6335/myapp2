@@ -1,0 +1,38 @@
+.item_review{
+  &__list{
+    overflow: scroll;
+    background-color: white;
+    border: 1px solid orange;
+    max-height: 25vh;
+    padding: 15px;
+    margin-top: 10px;
+    width: 90%;
+    box-shadow: 0 0 7px rgba(0,0,0,0.4);
+    &__content{
+      border-bottom: 1px solid lightgray;
+      margin-bottom: 5px;
+      &__user{
+        display: flex;
+        justify-content: space-between;
+        margin: 10px;
+        &--name{
+        }
+
+        &__delete{
+
+        }
+      }
+    }
+    &__text{
+      display: flex;
+      justify-content: space-between;
+      margin: 10px;
+      &__body{
+
+      }
+      &__time{
+
+      }
+    }
+  }
+}
