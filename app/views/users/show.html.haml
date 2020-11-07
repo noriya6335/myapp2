@@ -1,5 +1,38 @@
-マイページ
+.user
+  .user__header
+    .user__header__title
+      = "#{@user.nickname} さんのマイページ"
+    .user__header__change
+      = link_to "プロフィール変更" , new_user_profile_path(current_user.id)
+  .user__profile
+    - @profile.each do |profile|
+      .user__profile__images
+        = image_tag profile.image.url ,class: "user__profile__image"
+      .user__profile__status
+        = "#{@user.nickname} さんのプロフィール"
+        .user__profile__status__favorite
+          好きなビール・メーカー :
+          = profile.favorite
+        .user__profile__status__profiles
+          自己紹介 :
+          = profile.profiles
+  .user_review_item
+    このユーザーがレビューしたビール
+    .user__review_item
+      - @reviews.each do |review|
+        = link_to item_path(review.id) do
+          .user__review_item__list
+            .user__review_item__list__image
+              = image_tag review.item_images[0].image.url, class:"user__review__image"
+            .user__review_item__list__status
+              .user__review_item__list__name
+                = review.name
+              .user__review_item__list__maker
+                = review.maker
 
-このユーザーが追加したビール
+        
 
-このユーザーがレビューしたビール
+
+
+
+
