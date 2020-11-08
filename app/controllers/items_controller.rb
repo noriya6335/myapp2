@@ -26,12 +26,21 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to root_path, notice: '商品を登録しました'
+      redirect_to root_path, notice: 'アイテムを登録しました'
     else
       @item.item_images.new
       @item.valid?
       render :new
     end
+  end
+
+  def edit
+     
+  end
+
+  def update
+    @item.update(item_params)
+    redirect_to item_path(@item.id)
   end
 
 

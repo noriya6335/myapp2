@@ -51,6 +51,7 @@ h2{
       font-size: 18px;
       background-color: rgb(250, 197, 100);
       color: white;
+      transition-duration: 200ms;
       &:hover{
         background-color: white;
         color: orange;

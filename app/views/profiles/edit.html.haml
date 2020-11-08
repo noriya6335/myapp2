@@ -1,0 +1,19 @@
+%h2 プロフィール
+= form_with model: [ @user, @profile] do |f|
+  .profile_field
+    = f.label :ユーザーアイコン
+    = f.file_field :image
+
+
+  .profile_field
+    = f.label :好きなビール、ビールメーカー
+    = f.text_field :favorite
+
+
+  .profile_field
+    = f.label :プロフィール
+    = f.text_area :profiles
+
+
+  .profile_submit
+    = f.submit

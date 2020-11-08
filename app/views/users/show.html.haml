@@ -3,11 +3,18 @@
     .user__header__title
       = "#{@user.nickname} さんのマイページ"
     .user__header__change
-      = link_to "プロフィール設定・変更" , new_user_profile_path(current_user.id)
+      -if @user_profile == nil && @user.id == current_user.id
+        = link_to "プロフィール設定" , new_user_profile_path(current_user.id)
+      -elsif @user_profile != nil && @user.id == current_user.id
+        = link_to "プロフィール変更" , edit_user_profile_path(current_user.id)
+
   .user__profile
     - @profile.each do |profile|
-      .user__profile__images
-        = image_tag profile.image.url ,class: "user__profile__image"
+      -if profile.image == nil
+        .user__profile__images
+      - else
+        .user__profile__images
+          = image_tag profile.image.url ,class: "user__profile__image"
       .user__profile__status
         = "#{@user.nickname} さんのプロフィール"
         .user__profile__status__favorite

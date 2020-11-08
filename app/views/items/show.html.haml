@@ -73,7 +73,8 @@
           = image_tag "#{image.image}"
       .item_edit
         .item_edit__update
-          EDIT
+          = link_to edit_item_path(@item.id) do
+            EDIT
         .item_edit__delete
           = link_to item_path(@item.id), method: :delete, data: {confirm: "削除しますか？"} do
             DELETE
