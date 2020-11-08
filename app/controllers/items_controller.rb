@@ -16,11 +16,11 @@ class ItemsController < ApplicationController
     @comment = Comment.new
     @comments = @item.comments.includes(:user)
 
-    # if @item.comments.blank?
-    #   @average_review = 0
-    # else
-    #   @average_review = @item.comments.average(:rate).round(2)
-    # end
+    if @item.comments.blank?
+      @average_review = 0
+    else
+      @average_review = @item.comments.average(:rate).round(2)
+    end
   end
 
   def create
