@@ -3,7 +3,7 @@
     .user__header__title
       = "#{@user.nickname} さんのマイページ"
     .user__header__change
-      = link_to "プロフィール変更" , new_user_profile_path(current_user.id)
+      = link_to "プロフィール設定・変更" , new_user_profile_path(current_user.id)
   .user__profile
     - @profile.each do |profile|
       .user__profile__images
