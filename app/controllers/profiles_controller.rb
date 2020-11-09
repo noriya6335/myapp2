@@ -20,8 +20,8 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:user_id])
-
+    @user = current_user
+    @profiles = Profile.find_by(user_id: @user.id)
 
   end
 
@@ -35,6 +35,6 @@ class ProfilesController < ApplicationController
       params.require(:profile).permit(:image, :favorite, :profiles).merge(user_id: current_user.id)
     end
     def set_profile
-      @profile = Profile.find(params[:id])
+      @profile = Profile.find_by(user_id: current_user.id)
     end
 end

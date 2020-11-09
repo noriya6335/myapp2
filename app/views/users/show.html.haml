@@ -4,9 +4,9 @@
       = "#{@user.nickname} さんのマイページ"
     .user__header__change
       -if @user_profile == nil && @user.id == current_user.id
-        = link_to "プロフィール設定" , new_user_profile_path(current_user.id)
+        = link_to "プロフィール設定" , new_user_profile_path(@user.id)
       -elsif @user_profile != nil && @user.id == current_user.id
-        = link_to "プロフィール変更" , edit_user_profile_path(current_user.id)
+        = link_to "プロフィール変更" , edit_user_profile_path(@user.id, @user_profile.id)
 
   .user__profile
     - @profile.each do |profile|
