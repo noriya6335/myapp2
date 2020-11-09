@@ -8,11 +8,12 @@
 %br/
 %h1 ビール一覧
 .item_list
-  - @items.each do |item|
-    =link_to item_path(item) do
-      .item_list__title
-        = image_tag item.item_images[0].image.url , class: "main__item__post__new__image"
-        .item_list__title__name
-          = item.name
-          = item.maker
-     
+  .item_list_wall
+    - @items.each do |item|
+      =link_to item_path(item) do
+        .item_list__title
+          = image_tag item.item_images[0].image.url , class: "main__item__post__new__image"
+          .item_list__title__name
+            = item.name
+            = item.maker
+      

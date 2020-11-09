@@ -1,16 +1,39 @@
 // category index
 h1{
   padding: 10px;
+  text-align: center;
 }
 
 .item_list{
   display: flex;
-  flex-wrap: wrap;
-  padding: 10px;
+  background-image: image_url("wood-texture");
+  background-size: cover;
+  .item_list_wall{
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    background-image: image_url("paper-texture");
+    background-size: cover;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
   &__title{
-    margin: 10px;
+    text-align: center;
+    width: 250px;
+    height: 200px;
+    background-image: image_url("9335");
+    background-size: cover;
+    margin: 10px 10px 10px 50px;
+    padding: 10px;
+    transition-duration: 300ms;
+    &:hover{
+        transform:translateZ(500px) rotateX(15deg);
+    }
     &__name{
       text-align: center;
+
     }
   }
 }
@@ -21,10 +44,18 @@ a{
 }
 
 .categories_list{
-  padding: 10px;
+  padding: 15px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  background-image: image_url("board");
+  background-size: cover;
+  height: 100%;
+  color: white;
+  a{
+    color: white;
+    font-weight: bold;
+  }
   &__item{
     width: 360px;
     margin: 10px 0px;
@@ -33,14 +64,45 @@ a{
 // category show
 
 .category__title{
-  
+  background-image: image_url("wood-texture");
+  background-size: cover;
+  padding: 10px 0 10px 20px;
+  margin: 10px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
 }
 
 .category__list{
   display: flex;
-  padding: 10px;
+  padding: 20px;
+  background-image: image_url("wood-texture");
+  width: 98%;
+  .item_list_wall{
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    background-image: image_url("paper-texture");
+    background-size: cover;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
   &__item{
     margin: 10px;
+    background-image: image_url("9335");
+    background-size: cover;
+    width: 250px;
+    height: 200px;
+    margin: 10px 10px 10px 50px;
+    padding: 15px 10px 10px 10px;
+    transition-duration: 300ms;
+    text-align: center;
+
+    &:hover{
+        transform:translateZ(500px) rotateX(15deg);
+    }
     &__name{
       text-align: center;
     }

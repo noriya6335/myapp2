@@ -7,6 +7,7 @@ class CategoryController < ApplicationController
 
   def show
     @item = Item.where(category_id: @category.id)
+    @categories = Category.all
   end
 
   private
