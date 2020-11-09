@@ -43,25 +43,26 @@
               .item_review__list__content__user
                 .item_review__list__content__user--name
                   = link_to comment.user.nickname ,"/users/#{comment.user_id}"
-                .item_review__list__content__user--delete
-                  = link_to item_comment_path(comment.item_id, comment.id) ,method: :delete, remote: true, data: { confirm: 'コメントを削除しますか？' }  do
-                    = icon("fa","trash-alt")
-                .rate
-                  = image_tag ("star-on.png")
-                  = "#{comment.rate}点"
-                .rate-star{id: "star-rate-#{comment.id}"}
-                  -# :erb
-                  -#   <script>
-                  -#     $("#star-rate-<%= comment.id %>").raty({
-                  -#       size: 36,
-                  -#       starOff: "/assets/star-off.png",
-                  -#       starOn: "/assets/star-on.png",
-                  -#       starHalf: "/assets/star-half.png",
-                  -#       half: true,
-                  -#       readOnly: true,
-                  -#       score: <%= comment.rate %>,
-                  -#     });
-                  -#   </script>  
+                .item_review__list__content__user--icon
+                  .item_review__list__content__user--icon--delete
+                    = link_to item_comment_path(comment.item_id, comment.id) ,method: :delete, remote: true, data: { confirm: 'コメントを削除しますか？' }  do
+                      = icon("fa","trash-alt")
+                  .rate
+                    = image_tag ("star-on.png")
+                    = "#{comment.rate}点"
+                  .rate-star{id: "star-rate-#{comment.id}"}
+                    -# :erb
+                    -#   <script>
+                    -#     $("#star-rate-<%= comment.id %>").raty({
+                    -#       size: 36,
+                    -#       starOff: "/assets/star-off.png",
+                    -#       starOn: "/assets/star-on.png",
+                    -#       starHalf: "/assets/star-half.png",
+                    -#       half: true,
+                    -#       readOnly: true,
+                    -#       score: <%= comment.rate %>,
+                    -#     });
+                    -#   </script>  
               .item_review__list__text
                 .item_review__list__text--body
                   = comment.text
@@ -69,7 +70,7 @@
                   = comment.created_at.strftime("%Y-%m-%d %H:%M")
     .item__show__main__picture
       .item__show__main__picture--box    
-        - @item.item_images.each do |image|
+        - @item.item_images.reverse_each do |image|
           = image_tag "#{image.image}"
       .item_edit
         .item_edit__update
@@ -87,22 +88,21 @@
         = image_tag("star-on")
         を１〜５でしてください
         
-
-
     .comment__area
       レビューはこちらから
       -if current_user
         = form_with model: [@item, @comment], local: true , id: "new_comment" do |form|
           .comment__box
             = form.text_area :text, rows: "2", class: "textbox"
-          #star.form-group
-            = form.label :rate,'評価 '
-            = form.hidden_field :rate, id: :review_star
-            
-            .comment__submit
-            %button{type: "submit", class:'comment__submit__btn'} 
-              %i.fas.fa-comment
-                コメントする
+            .comment_under_box
+              #star.form-group
+                = form.label :rate,'評価 :'
+                = form.hidden_field :rate, id: :review_star
+                
+              .comment__submit
+                %button{type: "submit", class:"comment__submit__btn"} 
+                  %i.fas.fa-comment
+                    コメントする
       -else
         .comment__caution__login
           ※※※ コメントの投稿には

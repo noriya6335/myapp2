@@ -13,12 +13,17 @@
       margin-bottom: 5px;
       &__user{
         display: flex;
-        justify-content: space-between;
         margin: 10px;
+        justify-content: space-between;
         &--name{
-        }
 
-        &__delete{
+        }
+        &--icon{
+          display: flex;
+          margin-right: 10px;
+          &--delete{
+            margin-right: 20px;
+          }
 
         }
       }
@@ -33,6 +38,56 @@
       &__time{
 
       }
+    }
+  }
+}
+
+
+
+.review{
+  display: flex;
+  height: 20vh;
+  background-color: cadetblue;
+  padding: 10px;
+  margin-top: 20px;
+  &__content{
+    margin-right: 100px;
+  }
+  .comment__area{
+    width: 50%;
+    .comment__box{
+      width: 100%;
+      textarea{
+        width: 100%;
+        height: 50px;
+        padding: 10px;
+      }
+      .comment_under_box{
+        display: flex;
+      }
+    }
+    .comment__submit{
+      width: 100%;
+      &__btn{
+        margin-left: 200px;
+        width: 50%;
+        height: 50px;
+        padding: 10px;
+        font-size: 18px;
+        background-color: rgb(250, 197, 100);
+        color: white;
+        transition-duration: 200ms;
+        &:hover{
+          background-color: white;
+          color: orange;
+          transition: 200ms;
+          border-radius: 20px;
+        }
+      }
+    }
+    
+    .form-group{
+      width: 50%;
     }
   }
 }
