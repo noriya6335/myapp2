@@ -53,13 +53,41 @@
   &__review_item{
     display: flex;
     width: 100%;
+    min-height: 500px;
     flex-wrap: wrap;
+    background-image: image-url("wood-texture");
+    .item_list_wall{
+      display: flex;
+      flex-wrap: wrap;
+      width: 95%;
+      background-image: image_url("paper-texture");
+      background-size: cover;
+      margin: 0 auto;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 10px;
+    }
     &__list{
       margin: 15px;
+      background-image: image-url("9335");
+      background-size: cover;
+      width: 250px;
+      height: 200px;
+      padding: 20px;
+      transition-duration: 300ms;
+      text-align: center;
+  
+      &:hover{
+          transform:translateZ(500px) rotateX(15deg);
+      }
       &__image{
+
         .user__review__image{
           width: 180px;
           height: 150px;
+          overflow: hidden;
+          border-radius: 20px;
+          margin-top: 5px;
         }
       }
       &__status{
@@ -76,4 +104,33 @@
 
 .user_review_item{
   margin: 20px;
+}
+
+.profile_field{
+  background-color: rgb(255, 205, 113);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  flex-direction: column;
+  padding: 20px 10px;
+}
+.profile_submit{
+  text-align: center;
+  margin-top: 10px;
+  input{
+    width: 20%;
+    padding: 10px;
+    font-size: 18px;
+    background-color: rgb(250, 197, 100);
+    color: white;
+    transition-duration: 200ms;
+    &:hover{
+      background-color: white;
+      color: orange;
+      transition: 200ms;
+      border-radius: 20px;
+    }
+  }
 }

@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
   def index
     @newitems = Item.includes(:item_images).order("created_at DESC").limit(10)
     @newcommentitems = Item.includes(:comments).order("comments.created_at DESC").limit(10)
+
   end
 
   def new
@@ -53,7 +54,7 @@ class ItemsController < ApplicationController
   
   private
   def item_params
-    params.require(:item).permit(:name, :description, :maker ,:price, :category_id,  item_images_attributes: [:image])
+    params.require(:item).permit(:name, :description, :tag_list, :maker ,:price, :category_id, item_images_attributes: [:image])
   end
 
   def set_item

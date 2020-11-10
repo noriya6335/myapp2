@@ -1,0 +1,11 @@
+.category__title
+  = "タグ：#{@tag.name} 　一覧"
+.category__list
+  .item_list_wall
+    - @items.each do |item|
+      .category__list__item
+        = link_to item_path(item) do
+          = image_tag item.item_images[0].image.url , class: "main__item__post__new__image"
+          .category__list__item__name
+            = item.name
+            = item.maker

@@ -7,6 +7,11 @@
             = @item.name
           .item_data__price
             = "#{@item.price} 円"
+          .tag_list
+            タグ：
+            - @item.tag_list.each do |list|
+              =link_to list, "/tags/#{list}"
+
         .review_count
           = "レビュー数  #{@item.comments.length}件"
       .item__show__main__data--maker

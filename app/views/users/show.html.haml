@@ -9,33 +9,45 @@
         = link_to "プロフィール変更" , edit_user_profile_path(@user.id, @user_profile.id)
 
   .user__profile
-    - @profile.each do |profile|
-      -if profile.image == nil
-        .user__profile__images
-      - else
-        .user__profile__images
-          = image_tag profile.image.url ,class: "user__profile__image"
+    -if @user_profile != nil
+      - @profile.each do |profile|
+        -if profile.image == nil
+          .user__profile__images
+        - else
+          .user__profile__images
+            = image_tag profile.image.url ,class: "user__profile__image"
+        .user__profile__status
+          = "#{@user.nickname} さんのプロフィール"
+          .user__profile__status__favorite
+            好きなビール・メーカー :
+            = profile.favorite
+          .user__profile__status__profiles
+            自己紹介 :
+            = profile.profiles
+    - else
+      .user__profile__images
       .user__profile__status
         = "#{@user.nickname} さんのプロフィール"
         .user__profile__status__favorite
           好きなビール・メーカー :
-          = profile.favorite
         .user__profile__status__profiles
           自己紹介 :
-          = profile.profiles
+
+      
   .user_review_item
     このユーザーがレビューしたビール
     .user__review_item
-      - @reviews.each do |review|
-        = link_to item_path(review.id) do
-          .user__review_item__list
-            .user__review_item__list__image
-              = image_tag review.item_images[0].image.url, class:"user__review__image"
-            .user__review_item__list__status
-              .user__review_item__list__name
-                = review.name
-              .user__review_item__list__maker
-                = review.maker
+      .item_list_wall
+        - @reviews.each do |review|
+          = link_to item_path(review.id) do
+            .user__review_item__list
+              .user__review_item__list__image
+                = image_tag review.item_images[0].image.url, class:"user__review__image"
+              .user__review_item__list__status
+                .user__review_item__list__name
+                  = review.name
+                .user__review_item__list__maker
+                  = review.maker
 
         
 

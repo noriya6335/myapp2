@@ -41,6 +41,11 @@
               -@item.item_images.reverse_each do |image|
                 = image_tag "#{image.image}"
 
+
+          .field 
+            = f.label :tag_list
+            = f.text_field :tag_list, value: @item.tag_list.join(',')
+
         .field
           %ul
             %li  
