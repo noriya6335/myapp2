@@ -32,19 +32,10 @@
               .necessarily 必須
           #image-box.image-form
             = f.fields_for :item_images do |i|
-              = i.label :image do
-                %i.fa.fa-image
-                = i.file_field :image
-                = i.hidden_field :image_cache
-          .item_image_picture--box   
-            -if @item.item_images
-              -@item.item_images.reverse_each do |image|
-                = image_tag "#{image.image}"
-
-
-          .field 
-            = f.label :tag_list
-            = f.text_field :tag_list, value: @item.tag_list.join(',')
+              = i.file_field :image, onchange: 'previewImage(preview)'
+              = image_tag "", id: "preview"
+              = i.hidden_field :image_cache
+                     
 
         .field
           %ul

@@ -2,18 +2,22 @@
 = form_with model: [ @user, @profile] do |f|
   .profile_field
     = f.label :ユーザーアイコン
-    = f.file_field :image
-
+    .profile_field--image
+      = image_tag @profile.image.url, id: "preview"
+      .profile_field--image--icon
+        = f.file_field :image, onchange: 'previewImage(preview)'
 
   .profile_field
     = f.label :好きなビール、ビールメーカー
-    = f.text_field :favorite
+    .profile_field--text
+      = f.text_field :favorite
 
 
   .profile_field
     = f.label :プロフィール
-    = f.text_area :profiles
+    .profile_field--text
+      = f.text_area :profiles
 
 
   .profile_submit
-    = f.submit
+    = f.submit "更新する"
