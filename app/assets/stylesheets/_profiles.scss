@@ -19,6 +19,7 @@
     }
   &__profile{
     display: flex;
+    border-bottom: 1px solid lightgray;
     &__images{
       border:1px solid lightblue;
       margin: 20px;
@@ -29,7 +30,7 @@
         width: 200px;
         height: 200px;
         border-radius: 60px;
-        border: 1px solid blue;
+        border: 1px solid lightgray;
         box-shadow: 0 0 4px black;
         image{
           overflow: hidden;
