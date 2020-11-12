@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @itemid = @comment.select(:item_id)
     @reviews = Item.where(id: @itemid)
 
-    @user_profile = Profile.find_by(user_id: current_user.id)
+    @user_profile = Profile.find_by(user_id: @user.id)
   end
 
   private

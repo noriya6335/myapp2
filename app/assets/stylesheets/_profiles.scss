@@ -1,37 +1,51 @@
 .user{
+  background-color: rgb(228, 225, 225);
+  padding-bottom: 20px;
   &__header{
     display: flex;
-    background-color: lightblue;
-    justify-content: space-between;
+    background-color: rgb(248, 173, 10);
     height: 10vh;
     width: 100%;
+    &__menu{
+      display: flex;
+      &__blog{
+        margin: auto;
+        width: 200px;
+        margin-right: 50px;
+      }
+      &__change{
+        margin-right: 150px;
+        width: 200px;
+        margin: auto;
+      }
+    }
+
     &__title{
       font-size: 30px;
       margin: auto;
       width: 100%;
-      text-align: center;
+      margin-left: 50px;
     }
-    &__change{
-      margin-right: 150px;
-      width: 200px;
-      margin: auto;
-    }
+
     }
   &__profile{
     display: flex;
     border-bottom: 1px solid lightgray;
     &__images{
-      border:1px solid lightblue;
       margin: 20px;
-      width: 30%;
+      width: 350px;
+      height: 250px;
       padding: 20px;
+      margin-left: 40px;
       text-align: center;
+      background-color: white;
+      box-shadow: 0 0 4px black;
       .user__profile__image{
-        width: 200px;
-        height: 200px;
+        width: 100%;
+        height:100%;
         border-radius: 60px;
         border: 1px solid lightgray;
-        box-shadow: 0 0 4px black;
+        background-color: white;
         image{
           overflow: hidden;
 
@@ -42,12 +56,24 @@
       font-size: 24px;
       margin-left: 100px;
       margin-top: 15px;
+      background-color: white;
+      width: 80%;
+      margin-right: 100px;
+      padding: 15px;
+      box-shadow: 0 0 3px black;
+      h4{
+        border-bottom: black 1px solid;
+      }
       &__favorite{
         margin: 50px 0 20px 0;
         font-size: 18px;
       }
       &__profiles{
         font-size: 18px;
+      }
+      &__blog{
+        margin-top: 20px;
+        font-size: 18px;       
       }
     }
   }

@@ -22,6 +22,7 @@
             = link_to "Log out", destroy_user_session_path, method: :delete
           .header__contents__bottom__right
             = link_to "アイテム追加" , new_item_path
+            = link_to "ブログ", new_user_article_path(current_user)
       -else
         .header__contents__bottom
           .header__contents__bottom__left

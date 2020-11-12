@@ -77,3 +77,7 @@ gem "aws-sdk-s3", require: false
 gem 'dotenv-rails'
 gem 'fog-aws'
 gem 'acts-as-taggable-on', '~> 6.0'
+gem 'bootstrap-sass'
+gem 'jquery-slick-rails'
+gem 'dropzonejs-rails'
+gem 'redcarpet'

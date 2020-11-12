@@ -7,8 +7,10 @@ end
 
 get 'tags/:name' => 'tags#show'
 
+
 resources :category, only: [:show,:index]
 resources :users, only: [:show] do
   resources :profiles, only: [:create, :destroy, :show, :new,:edit, :update]
+  resources :articles
   end
 end

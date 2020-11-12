@@ -2,11 +2,16 @@
   .user__header
     .user__header__title
       = "#{@user.nickname} さんのマイページ"
-    .user__header__change
-      -if @user_profile == nil && @user.id == current_user.id
-        = link_to "プロフィール設定" , new_user_profile_path(@user.id)
-      -elsif @user_profile != nil && @user.id == current_user.id
-        = link_to "プロフィール変更" , edit_user_profile_path(@user.id, @user_profile.id)
+    .user__header__menu
+      .user__header__menu__blog
+        -if current_user == @user
+          = link_to "#{@user.nickname} さんのブログページ", user_articles_path(@user)
+
+      .user__header__menu__change
+        -if @user_profile == nil && @user.id == current_user.id
+          = link_to "プロフィール設定" , new_user_profile_path(@user.id)
+        -elsif @user_profile != nil && @user.id == current_user.id
+          = link_to "プロフィール変更" , edit_user_profile_path(@user.id, @user_profile.id)
 
   .user__profile
     -if @user_profile != nil
@@ -17,14 +22,17 @@
           .user__profile__images
             = image_tag profile.image.url ,class: "user__profile__image"
         .user__profile__status
-          = "#{@user.nickname} さんのプロフィール"
+          %h4 プロフィール
           .user__profile__status__favorite
             好きなビール・メーカー :
             = profile.favorite
           .user__profile__status__profiles
             自己紹介 :
             = profile.profiles
-    - else
+          .user__profile__status__blog
+            ブログページ :
+            = link_to "#{@user.nickname} さんのブログページ", user_articles_path(@user)
+    - elsif @user_profile == nil
       .user__profile__images
       .user__profile__status
         = "#{@user.nickname} さんのプロフィール"
@@ -32,10 +40,12 @@
           好きなビール・メーカー :
         .user__profile__status__profiles
           自己紹介 :
-
+        .user__profile__status__blog
+          ブログページ :
+          = link_to "#{@user.nickname} さんのブログページ", user_articles_path(@user)
       
   .user_review_item
-    このユーザーがレビューしたビール
+    %h4 このユーザーがレビューしたビール
     .user__review_item
       .item_list_wall
         - @reviews.each do |review|
