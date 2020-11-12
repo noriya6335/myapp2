@@ -1,19 +1,20 @@
-%h1 ビールカテゴリー
-.categories_list
-  - @categories.each do |category|
-    .categories_list__item
-      = link_to "#{category.name}", category_path(category)
-      = "[ #{category.items.count} ]"
+.category
+  %h1 ビールカテゴリー
+  .categories_list
+    - @categories.each do |category|
+      .categories_list__item
+        = link_to "#{category.name}", category_path(category)
+        = "[ #{category.items.count} ]"
 
-%br/
-%h1 ビール一覧
-.item_list
-  .item_list_wall
-    - @items.each do |item|
-      =link_to item_path(item) do
-        .item_list__title
-          = image_tag item.item_images[0].image.url , class: "main__item__post__new__image"
-          .item_list__title__name
-            = item.name
-            = item.maker
-      
+  %br/
+  %h1 ビール一覧
+  .item_list
+    .item_list_wall
+      - @items.each do |item|
+        =link_to item_path(item) do
+          .item_list__title
+            = image_tag item.item_images[0].image.url , class: "main__item__post__new__image"
+            .item_list__title__name
+              = item.name
+              = item.maker
+        

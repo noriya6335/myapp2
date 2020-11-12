@@ -2,12 +2,13 @@
   &__list{
     overflow: scroll;
     background-color: white;
-    border: 1px solid orange;
+    border: 1px solid lightgray;
     max-height: 25vh;
     padding: 15px;
     margin-top: 10px;
     width: 90%;
     box-shadow: 0 0 7px rgba(0,0,0,0.4);
+    border-radius: 10px;
     &__content{
       border-bottom: 1px solid lightgray;
       margin-bottom: 5px;
@@ -47,11 +48,14 @@
 .review{
   display: flex;
   height: 20vh;
-  background-color: cadetblue;
-  padding: 10px;
-  margin-top: 20px;
+  background-color: rgb(184, 179, 179);
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  border-radius: 5px;
   &__content{
     margin-right: 100px;
+    text-align: center;
   }
   .comment__area{
     width: 50%;

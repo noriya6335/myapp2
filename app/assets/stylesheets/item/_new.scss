@@ -1,20 +1,33 @@
 #image-box.image-form{
   input{
+    display: block;
     width: 100%;
   }
   #preview{
-    width: 180px;
-    height: 150px;
+    width: 280px;
+    height: 250px;
     background-color: rgb(238, 238, 238);
     border: lightgray 1px solid;
     border-radius: 5px;
     text-align: center;
+    margin: auto;
   }
 }
-
+ul{
+  display: flex;
+  list-style: none;
+  li{
+    margin-left: 20px;
+  }
+}
 
 .category__form{
   height: 50px;
   width: 30%;
   
+}
+
+.necessarily{
+  font-size: 12px;
+  color: red;
 }

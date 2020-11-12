@@ -13,7 +13,10 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @articles = Article.all
     @article = Article.find(params[:id])
+    @user = User.find(params[:user_id])
+    @article_user = @articles.where(user_id: @user.id)
   end
 
   def create

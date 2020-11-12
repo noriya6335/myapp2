@@ -7,11 +7,20 @@
       - if current_user.id == @user.id
         .blog__update
           .blog__update__edit
+            = link_to user_article_path(@user.id, article.id) do
+              show
+          .blog__update__edit
             = link_to edit_user_article_path(@user.id, article.id) do
               edit
           .blog__update__delete
             = link_to user_article_path(@user.id, article.id), method: :delete , data: {confirm: "削除しますか？"} do
               delete
+      - else
+        .blog__update
+          .blog__update__edit
+            = link_to user_article_path(@user.id, article.id) do
+              show
+
       %table
         %tbody
         .blog__title

@@ -58,6 +58,14 @@
 
   &__item{
     display: flex;
+    &__posts{
+      display: flex;
+      margin-top: 20px;
+      overflow: scroll;
+      width: 1000px;
+      height: 200px;
+      padding: 10px;
+    }
     &__post{
       display: flex;
       margin-top: 10px;
@@ -66,7 +74,7 @@
       height: 200px;
       padding: 10px;
       &__new{
-        background-color: white;
+        background-color: ghostwhite;
         min-width: 180px;
         min-height: 180px;
         border-radius: 50px;
@@ -103,7 +111,7 @@
       height: 200px;
       padding: 10px;
       &__new{
-        background-color: white;
+        background-color: ghostwhite;
         min-width: 180px;
         min-height: 180px;
         border-radius: 50px;
