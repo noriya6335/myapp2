@@ -1,7 +1,8 @@
 .main{
-  min-width: 50%;
-  max-height: 100VH;
+  max-width: 100%;
+  height: auto;
   background-image: image-url("main2.jpg");
+  background-color: ghostwhite;
   background-size: cover;
   align-items: center;
   background-position: top center;
@@ -72,8 +73,8 @@
       overflow: scroll;
       flex-wrap: wrap;
       width: 420px;
-      max-height: 100vh;
       height: 200px;
+      max-height: 80vh;
       padding: 10px;
       &__new{
         background-color: ghostwhite;
@@ -112,8 +113,8 @@
       overflow: scroll;
       flex-wrap: wrap;
       width: 420px;
-      max-height: 100vh;
       height: 200px;
+      max-height: 80vh;
       padding: 10px;
       &__new{
         background-color: ghostwhite;
