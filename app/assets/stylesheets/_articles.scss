@@ -1,0 +1,54 @@
+.blog{
+  background-color: white;
+  border: rgb(187, 187, 187) 1px solid;
+  text-align: center;
+  margin: auto;
+  width: 40%;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 4px  rgb(73, 73, 73);
+  &__update{
+    display: flex;
+    &__edit{
+      margin: 10px;
+    }
+    &__delete{
+      margin: 10px;
+    }
+  }
+  &__title{
+    
+  }
+  &__text{
+
+  }
+  &__image{
+    &--image{
+      width: 200px;
+      height: 200px 
+      image{
+
+      }
+    }
+  }
+}
+
+.article_index{
+  background-color: rgb(199, 195, 195);
+  padding-bottom: 20px;
+  min-height: 100vh;
+  &__title{
+    text-align: center;
+    padding: 20px;
+  }
+}
+
+th{
+  border-bottom: lightgrey 1px solid;
+  padding: 15px;
+}
+td{
+  padding: 25px;
+  border-bottom: dotted 1px lightgrey;
+  width: 100%;
+}

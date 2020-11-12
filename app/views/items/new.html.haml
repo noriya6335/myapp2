@@ -2,6 +2,7 @@
   %h2 アイテムの追加
   .container__main
     = form_for @item do |f|
+      = render 'error_messages', model: @item
       .user_form
         .field
           %ul

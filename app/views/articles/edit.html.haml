@@ -1,0 +1,16 @@
+%h2 ブログ記事 編集
+= form_with model: [@user,@article] do |f|
+  .profile_field
+    = f.label :title
+    = f.text_field :title
+  .profile_field
+    = f.label :text
+    = f.text_area :text
+  .profile_field
+    = f.label :image
+    .profile_field--image
+      = image_tag @article.image.url, id: "preview"
+      .profile_field--image--icon
+        = f.file_field :image, onchange: 'previewImage(preview)'
+  .profile_submit
+    = f.submit "編集する"

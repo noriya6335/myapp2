@@ -1,0 +1,29 @@
+.article_index
+  .article_index__title
+    = "#{@user.nickname} さんのブログ記事"
+  .article_index__content
+  - @article_user.each do |article|
+    .blog
+      - if current_user.id == @user.id
+        .blog__update
+          .blog__update__edit
+            = link_to edit_user_article_path(@user.id, article.id) do
+              edit
+          .blog__update__delete
+            = link_to user_article_path(@user.id, article.id), method: :delete , data: {confirm: "削除しますか？"} do
+              delete
+      %table
+        %tbody
+        .blog__title
+          %tr
+            %th title
+            %td= article.title
+        .blog__text
+          %tr
+            %th text
+            %td= article.text
+        .blog__image
+          %tr
+            %th 
+            %td= image_tag article.image.url, class:"blog__image--image"
+
